@@ -450,11 +450,13 @@ prepare_partitions()
 	fi
 
 	# create /etc/fstab
-	echo "# <file system>                              <mount point>   <type>  <options>                                                             <dump>  <pass>" > $ROOTFS/etc/fstab
-	echo "tmpfs                                          /tmp            tmpfs   defaults,nosuid                                                          0   0" >> $ROOTFS/etc/fstab
-	echo "$rootfs_uuid      /               ext4    defaults,noatime,nodiratime,commit=600,errors=remount-ro,x-gvfs-hide     0   1" >> $ROOTFS/etc/fstab
+	echo "# <file system>                             <mount point>   <type>  <options>                                                                <dump>  <pass>" > $ROOTFS/etc/fstab
+	echo "tmpfs                                        /var/log        tmpfs   defaults,noatime,mode=1777                                               0       0"    >> $ROOTFS/etc/fstab
+	echo "tmpfs                                        /var/tmp        tmpfs   defaults,noatime,mode=1777                                               0       0"    >> $ROOTFS/etc/fstab      
+	echo "tmpfs                                        /tmp            tmpfs   rw,size=3500M                                                            0       0"    >> $ROOTFS/etc/fstab
+	echo "$rootfs_uuid                                 /               ext4    defaults,noatime,nodiratime,commit=600,errors=remount-ro,x-gvfs-hide     0       1"    >> $ROOTFS/etc/fstab
 	if [ "$INSTALL_TYPE" == "SD-USB" ]; then
-		echo "$bootfs_uuid                                 /boot           vfat    defaults                                                                 0   2" >> $ROOTFS/etc/fstab
+		echo "$bootfs_uuid                               /boot           vfat    defaults                                                                 0       2"    >> $ROOTFS/etc/fstab
 	fi
 
 	[ "$DEBUG" ] && {
