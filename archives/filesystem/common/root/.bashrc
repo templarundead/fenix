@@ -359,7 +359,7 @@ function hostname (){
 }
 
 function soft(){
-	apt update && apt upgrade -y && apt install iperf3 lighttpd pixz ruby-full samba shellcheck transmission-daemon python3-pip -y && pip3 install beautysh && curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash - && sudo apt install -y nodejs && npm install -g npm@latest regexgen regexp-tree browserify prettier && npm install regexgen regexp-tree tinyify && curl -L https://cpanmin.us | perl - --sudo App::cpanminus && cpanm --self-upgrade --sudo && cpanm Regexp::Optimizer Regexp::Trie Regex::PreSuf Perl::Tidy && gem ins regexp_optimized_union && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && ln -s /usr/bin/python3 /usr/bin/python 2> /dev/null;
+	apt update && apt upgrade -y && apt install bat iperf3 lighttpd pixz ruby-full samba shellcheck transmission-daemon python3-pip -y && pip3 install beautysh && curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash - && sudo apt install -y nodejs && npm install -g npm@latest regexgen regexp-tree browserify prettier && npm install regexgen regexp-tree tinyify && curl -L https://cpanmin.us | perl - --sudo App::cpanminus && cpanm --self-upgrade --sudo && cpanm Regexp::Optimizer Regexp::Trie Regex::PreSuf Perl::Tidy && gem ins regexp_optimized_union && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && ln -s /usr/bin/python3 /usr/bin/python 2> /dev/null;
 }
 
 # samba passwdord
